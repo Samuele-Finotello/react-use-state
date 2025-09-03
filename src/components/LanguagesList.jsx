@@ -35,7 +35,7 @@ const LanguagesList = () => {
     }
   ];
 
-  let [card, setCard] = useState(0)
+  let [card, setCard] = useState(null)
 
   return (
     <>
@@ -44,19 +44,25 @@ const LanguagesList = () => {
           return (
             <>
               <div className="m-2">
-                <button className="btn btn-primary" onClick={() => { setCard(language) }} key={language['id']}>{language['title']}</button>
+                <button className="btn btn-primary p-2" onClick={() => { setCard(language) }} key={language['id']}>{language['title']}</button>
               </div>
             </>
           )
         })}
       </div>
       <div className='card m-5 col-6'>
-        <h2 className="mt-4 ms-4">
-          {card['title']}
-        </h2>
-        <div className="ms-4 my-2 fs-4">
-          {card['description']}
-        </div>
+        {card === null ?
+          <>
+            <h2 className='m-3'>Nessun linguaggio selezionato</h2>
+          </> :
+          <>
+            <h2 className="mt-4 ms-4">
+              {card['title']}
+            </h2>
+            <div className="ms-4 my-2 fs-4">
+              {card['description']}
+            </div>
+          </>}
       </div>
     </>
   )
