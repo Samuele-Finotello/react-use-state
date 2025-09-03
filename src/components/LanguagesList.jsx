@@ -34,15 +34,25 @@ const LanguagesList = () => {
   ];
 
   return (
-    <div className="d-flex ms-5">
-      {languages.map(language => {
-        return (
-          <div className="m-2">
-            <button className="btn btn-primary">{language['title']}</button>
-          </div>
-        )
-      })}
-    </div>
+    <>
+      <div className="d-flex ms-5">
+        {languages.map(language => {
+          return (
+            <div className="m-2" key={language['id']}>
+              <button className="btn btn-primary">{language['title']}</button>
+            </div>
+          )
+        })}
+      </div>
+      <div className="card m-5 col-6">
+        <h2 className="mt-4 ms-4">
+          {languages[0]['title']}
+        </h2>
+        <div className="ms-4 my-2 fs-4">
+          {languages[0]['description']}
+        </div>
+      </div>
+    </>
   )
 }
 
