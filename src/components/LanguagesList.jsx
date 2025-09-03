@@ -34,8 +34,14 @@ const LanguagesList = () => {
   ];
 
   return (
-    <div>
-
+    <div className="d-flex ms-5">
+      {languages.map(language => {
+        return (
+          <div className="m-2">
+            <button className="btn btn-primary">{language['title']}</button>
+          </div>
+        )
+      })}
     </div>
   )
 }
