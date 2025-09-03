@@ -44,7 +44,7 @@ const LanguagesList = () => {
           return (
             <>
               <div className="m-2">
-                <button className="btn btn-primary p-2" onClick={() => { setCard(language) }} key={language['id']}>{language['title']}</button>
+                <button className={card !== null && card['title'] === language['title'] ? "btn btn-warning p-2" : "btn btn-primary p-2"} onClick={() => { setCard(language) }} key={language['id']}>{language['title']}</button>
               </div>
             </>
           )
